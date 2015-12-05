@@ -6,10 +6,13 @@ class ItemsController < ApplicationController
     if params[:q]
       response = Amazon::Ecs.item_search(params[:q] , 
                                   :search_index => 'All' , 
-                                  :response_group => 'Medium' , 
+                                  :response_group => 'Large' , 
                                   :country => 'jp')
       @amazon_items = response.items
     end
+    
+    
+    
   end
 
   def show
