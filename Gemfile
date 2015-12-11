@@ -30,6 +30,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'bootstrap-sass'
 # https://github.com/jugend/amazon-ecs
 gem 'amazon-ecs'
+gem 'pry-byebug'
 
 
 # Use Unicorn as the app server
