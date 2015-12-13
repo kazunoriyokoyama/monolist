@@ -1,3 +1,11 @@
+<% content_for :title do %>
+<%= user.name %>-monolist
+<% end %>
+<% content_for :meta_description do %>
+<%= user.name %>のモノページ。Hanakoの欲しいモノ、持ってるモノを表示しています。
+<% end %>
+
+
 <div class="user-profile">
   <div class="icon">
     <%= gravatar_for user, size: 100 %>
@@ -22,13 +30,13 @@
       <li>
         <div class="status-label">WANT</div>
         <div id="want_count" class="status-value">
-          789
+          <%= user.want_items.count %>
         </div>
       </li>
       <li>
         <div class="status-label">HAVE</div>
         <div id="have_count" class="status-value">
-          123
+           <%= user.have_items.count %>
         </div>
       </li>
     </ul>
@@ -36,3 +44,4 @@
     <%= render 'follow_form' if logged_in? && @user != current_user %>
   </div>
 </div>
+
