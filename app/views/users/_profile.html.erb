@@ -1,9 +1,12 @@
 <% content_for :title do %>
 <%= user.name %>-monolist
 <% end %>
+
+
 <% content_for :meta_description do %>
-<%= user.name %>のモノページ。Hanakoの欲しいモノ、持ってるモノを表示しています。
+<meta name="description" content="<%= user.name %>のモノページ。Hanakoの欲しいモノ、持ってるモノを表示しています。" />
 <% end %>
+
 
 
 <div class="user-profile">

@@ -1,10 +1,11 @@
 <% content_for :title do %>
 <%= @item.title %>-monolist
 <% end %>
-<% content_for :meta_description do %>
-<%= @item.title %>に関する情報です。この商品を欲しい人、持ってる人を表示しています。
-<% end %>
 
+
+<% content_for :meta_description do %>
+<meta name="description" content="<%= @item.title %>に関する情報です。この商品を欲しい人、持ってる人を表示しています。" />
+<% end %>
 
 <div class="container">
   <div class="container-inner inner-sm clearfix">

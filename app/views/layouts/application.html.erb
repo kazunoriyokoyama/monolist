@@ -2,7 +2,11 @@
 <html>
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "Monolist"%></title>
-  <meta_description><%= content_for?(:meta_description) ? yield(:meta_description) : "Monolist"%></meta_description>
+  <% if yield :meta_description %>
+  <%= yield :meta_description %>
+  <% else %>
+  <meta name="description" content="Monolist" />
+  <% end %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
