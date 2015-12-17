@@ -1,0 +1,16 @@
+<div class="cover">
+ <div class="cover-inner">
+   <div class="cover-contents">
+    <h1>have ランキング BEST5</h1>
+   </div>
+ </div>
+</div>
+<h1>have ランキング BEST5</h1>
+<ol>
+<%= @count_hash.each do |key,value|%>
+<li>
+   アイテム番号<%= key %>
+   <%= value %>個
+</li>
+<% end %>
+</ol>
