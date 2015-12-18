@@ -1,16 +1,32 @@
 <div class="cover">
  <div class="cover-inner">
    <div class="cover-contents">
-    <h1>have ランキング BEST5</h1>
+    <h1>Have ランキング BEST5</h1>
    </div>
  </div>
 </div>
-<h1>have ランキング BEST5</h1>
-<ol>
-<%= @count_hash.each do |key,value|%>
-<li>
-   アイテム番号<%= key %>
-   <%= value %>個
-</li>
-<% end %>
-</ol>
+<h1>Have ランキング BEST5</h1>
+
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <% @items.each do |item| %>
+      <div class="item-box">
+        <div class="image">
+          <div class="img-wrap">
+            <% if item.large_image.present? %>
+             <%= image_tag(item.large_image , alt: item.title) %>
+            <% else %>
+              <%= image_tag("no-image.png" , alt: item.title) %>
+            <% end %>
+          </div>
+        </div>
+        <div class="detail">
+          <p class="title">
+            <%= item.title %>
+          </p>
+        </div>
+        <P><%= item.have_users.count %>個</p>
+      </div>
+    <% end %>
+  </div>
+</div>
